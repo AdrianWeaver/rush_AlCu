@@ -61,6 +61,7 @@ SRCS		=	$(addprefix $(LIBFT_PATH),\
 				ft_putchar.c		\
 				ft_putchar_colour.c	\
 				ft_putstr.c			\
+				ft_putstr_no_nl.c	\
 				ft_putstr_colour.c	\
 				ft_putendl.c		\
 				ft_putnbr.c			\

@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 16:10:20 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 22:31:15 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,6 +351,13 @@ int		ft_putendl(char *s);
 #  define FT_PUTSTR
 
 int		ft_putstr(char *s);
+
+# endif
+
+# ifndef FT_PUTSTR_NO_NL
+#  define FT_PUTSTR_NO_NL
+
+int		ft_putstr_no_nl(char *s);
 
 # endif
 
