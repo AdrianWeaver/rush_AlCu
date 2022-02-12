@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 19:01:51 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 20:09:27 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,15 +76,18 @@ void	ft_game_loop(t_map *map)
 		ft_display_board(map);
 		if (player)
 		{
-			do
-			{
-				move = ft_player_turn();
-			} while (ft_check_move(map, move));
+			ft_printf("AI 2\n");
+			move = ft_ia_turn(map);
+			// do
+			// {
+			// 	move = ft_player_turn();
+			// } while (ft_check_move(map, move));
 			
 			player = 0;
 		}
 		else
 		{
+			ft_printf("AI 1\n");
 			move = ft_ia_turn(map);
 			player = 1;
 		}
