@@ -6,10 +6,11 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/12 19:19:14 by bregneau          #+#    #+#             */
-/*   Updated: 2022/01/16 20:29:48 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 15:02:33 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
 void	*ft_realloc(void *ptr, size_t old_size, size_t size)
