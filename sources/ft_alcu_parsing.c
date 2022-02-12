@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 15:59:04 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 16:34:07 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	alcu_parsing(int fd, t_map *map)
 			map->heap[i] = ft_atoi(str);	
 			map->size++;
 		}
+		i++;
 	} while (str); 
 	return (0);		
 }
