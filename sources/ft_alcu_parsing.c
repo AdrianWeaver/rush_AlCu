@@ -3,14 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alcu_parsing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 18:45:00 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 20:09:44 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "alcu.h"
+#include "get_next_line.h"
+#include "stdlib.h"
+
+static int	ft_check_alcu_map(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] && str[i] != \n)
+	{
+		if (ft_isdigit(str[i]) == 0)
+			return (-1);
+		i++;
+	}
+	while (*str == 0)
+		str++;
+	if (ft_strlen(str) > 5 || ft_atoi(str) > 1000)
+		return (-1);
+	return (0);
+}
 
 int	alcu_parsing(int fd, t_map *map)
 {
@@ -23,7 +44,7 @@ int	alcu_parsing(int fd, t_map *map)
 	do
 	{
 		str = get_next_line(fd);
-		if (ft_strlen(str) > 5 || ft_atoi(str) > 10000)
+		if (ft_check_alcu_map(str) == -1)
 		{
 			free(str);
 			if (i > 0)
