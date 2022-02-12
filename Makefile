@@ -6,11 +6,11 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 11:38:52 by aweaver          ###   ########.fr        #
+#    Updated: 2022/02/12 15:10:19 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			./a.out
+NAME			=			AlCu
 
 CC				=			gcc
 
@@ -20,9 +20,13 @@ LIBFT_PATH		=			./libft/
 SRCS_PATH		=			./sources/
 OBJS_PATH		=			./objs/
 
-INC				=			-I $(addprefix $(LIBFT_PATH),includes/)
+INC				=			-I $(addprefix $(LIBFT_PATH),includes/)\
+							-I ./includes
 
-SRCS			=			ft_display_board.c
+SRCS			=			$(addprefix $(SRCS_PATH),\
+							main.c						\
+							ft_display_board.c			\
+							ft_parse.c)
 
 OBJS			=			$($(addprefix $(OBJS_PATH),SRCS:.c=.o))
 
@@ -33,7 +37,7 @@ LIBFT			=			$(addprefix $(LIBFT_PATH),libft.a)
 all:						$(NAME)
 
 $(NAME):					$(OBJS) $(LIBFT)
-							$(CC) $(CFLAGS) $^ -o $@ $(INC)
+							$(CC) $(CFLAGS) -o $(NAME) $^ $(INC)
 
 $(LIBFT):
 							$(MAKE) -C $(LIBFT_PATH)
@@ -50,8 +54,7 @@ fclean:						clean
 							rm -f $(NAME)
 							$(MAKE) -C $(LIBFT_PATH) fclean
 
-re:							
-							fclean all
+re:							fclean all
 							$(MAKE) -C $(LIBFT_PATH) re
 
 -include $(DEP)
