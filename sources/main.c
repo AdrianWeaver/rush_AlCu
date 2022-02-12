@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:39:03 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 18:39:12 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 18:44:36 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "unistd.h"
 #include "alcu.h"
-#include "libftprintf.h"
-#include "fcntl.h"
 
 int	main(int argc, char **argv)
 {
