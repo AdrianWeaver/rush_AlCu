@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 23:27:38 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 23:31:24 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	alcu_parsing(int fd, t_map *map)
 	while (1)
 	{
 		str = get_next_line(fd);
-		if (str == NULL || *str == '\n')
+		if (str == NULL)
 			break ;
 		if (*str == '\n')
 		{
