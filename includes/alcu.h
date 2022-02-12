@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:37:23 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 15:41:07 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:44:34 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@ typedef struct s_map
 #  define ALCU_PARSING
 
 int	alcu_parsing(int fd, t_map *map);
+
+# endif
+
+# ifndef FT_DISPLAY_BOARD
+#  define FT_DISPLAY_BOARD
+
+void	ft_display_board(t_map *map);
 
 # endif
 
