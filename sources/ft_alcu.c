@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 20:09:27 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 20:21:30 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,10 @@ int	ft_ia_turn(t_map *map)
 	return (move);
 }
 
-int	ft_player_turn(void)
+int	ft_player_turn(int fake__stdin)
 {
 	char	*line;
-	line = get_next_line(0);
+	line = get_next_line(fake__stdin);
 	return (ft_atoi(line));
 }
 
@@ -64,11 +64,12 @@ int	ft_check_move(t_map *map, int move)
 	return (1);
 }
 
-void	ft_game_loop(t_map *map)
+void	ft_game_loop(t_map *map, int fake_stdin)
 {
 	int	player;
 	int	move;
 
+	(void)fake_stdin;
 	player = 0;
 	ft_init(map);
 	while (map->heap[0])
@@ -80,7 +81,7 @@ void	ft_game_loop(t_map *map)
 			move = ft_ia_turn(map);
 			// do
 			// {
-			// 	move = ft_player_turn();
+			// 	move = ft_player_turn(fake__stdin);
 			// } while (ft_check_move(map, move));
 			
 			player = 0;
