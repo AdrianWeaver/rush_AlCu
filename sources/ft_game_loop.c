@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 22:01:21 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 22:32:40 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,33 @@ int	ft_ia_turn(t_map *map)
 	return (move);
 }
 
-int	ft_player_turn(int fake_stdin)
+int	ft_check_move(t_map *map, char* str)
+{
+	int	move;
+	
+	if (ft_strlen(str) != 1 || ((*str != '1') || (*str != '2')
+		|| (*str != '3')) || ft_atoi(str) > map->heap[map->size - 1])
+	{
+		ft_putstr_no_nl(str);
+		ft_putstr(" - Invalid choice\n");
+		return (-1);
+	}
+	move = ft_atoi(str);
+	free(str);
+	return (move);
+}
+
+int	ft_player_turn(t_map *map, int fake_stdin)
 {
 	char	*line;
+	int		move;
 
 	ft_putendl("Please choose between 1 and 3 items");
 	line = get_next_line(fake_stdin);
+	do
+	{
+		move = ft_check_move(map, line);
+	} while (move != -1);
 	return (ft_atoi(line));
 }
 
@@ -56,17 +77,6 @@ void	ft_play(t_map *map, int move)
 	map->heap[map->size - 1] -= move;
 	if (map->heap[map->size - 1] == 0)
 		map->size--;
-}
-
-int	ft_check_move(t_map *map, int move)
-{
-	if ((move < 1) || (move > 3) || move > map->heap[map->size - 1])
-	{
-		ft_putnbr(move);
-		ft_putstr(" - Invalid choice\n");
-		return (0);
-	}
-	return (1);
 }
 
 void	ft_game_loop(t_map *map, int fake_stdin)
@@ -82,11 +92,7 @@ void	ft_game_loop(t_map *map, int fake_stdin)
 		ft_display_board(map);
 		if (player)
 		{
-			do
-			{
-				move = ft_player_turn(fake_stdin);
-			} while (ft_check_move(map, move) == 0);
-			
+			ft_player_turn(map, fake_stdin);
 			player = 0;
 		}
 		else

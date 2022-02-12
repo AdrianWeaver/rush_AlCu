@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 17:14:21 by bregneau         ###   ########.fr        #
+#    Updated: 2022/02/12 22:25:43 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INC				=			-I $(addprefix $(LIBFT_PATH),includes/)\
 SRCS			=			main.c\
 							ft_display_board.c			\
 							ft_alcu_parsing.c			\
-							ft_alcu.c
+							ft_game_loop.c
 
 OBJS			=			$(addprefix $(OBJS_PATH),$(SRCS:.c=.o))
 
