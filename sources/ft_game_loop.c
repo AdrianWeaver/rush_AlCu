@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 23:23:02 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 00:41:07 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_ia_turn(t_map *map)
 	move = (map->heap[i] - map->rest[i]) % 4;
 	if (move == 0)
 		move = 1;
-	ft_putstr("IA took ");
+	ft_putstr("AI took ");
 	ft_putnbr(move);
 	ft_putstr(" \n");
 	return (move);
@@ -102,10 +102,9 @@ void	ft_game_loop(t_map *map, int fake_stdin)
 			move = ft_ia_turn(map);
 			player = 1;
 		}
-		// ft_printf("%d\n", map->heap[0]);
 		ft_play(map, move);
-		// ft_printf("%d\n", map->heap[0]);
 	}
+	free(get_next_line(-1));
 	free(map->rest);
 	if (player)
 		ft_putendl("You are the winner! Congratulations!");

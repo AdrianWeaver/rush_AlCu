@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:11:32 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 16:34:32 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/13 00:45:28 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,11 @@ char	*ft_make_magic(int fd, char *buffer, int bytes_read)
 	static char	*memory;
 	char		*line;
 
+	if (fd == -1)
+	{
+		free(memory);
+		memory = NULL;
+	}
 	if (memory == 0)
 	{
 		memory = malloc(sizeof(*memory) * (1));
@@ -105,7 +110,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			bytes_read;
 
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
+	if (fd < -1 || fd > 1024 || BUFFER_SIZE <= 0)
 		return (0);
 	buffer = malloc(sizeof(buffer) * (BUFFER_SIZE + 1));
 	if (!buffer)
