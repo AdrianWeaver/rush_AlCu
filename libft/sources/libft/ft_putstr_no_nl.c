@@ -6,13 +6,13 @@
 /*   By: aweaver <aweaver@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/18 09:09:06 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 22:30:40 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 22:42:06 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putstr(char *s)
+int	ft_putstr_no_nl(char *s)
 {
 	int	ret;
 
