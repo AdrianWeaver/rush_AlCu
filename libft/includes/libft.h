@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2022/01/26 08:39:13 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 14:05:14 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,6 +219,13 @@ int		ft_atoi(const char *nptr);
 #  define FT_CALLOC_H
 
 void	*ft_calloc(size_t nmemb, size_t size);
+
+# endif
+
+# ifndef FT_REALLOC_H
+#  define FT_REALLOC_H
+
+void	*ft_realloc(void *ptr, size_t old_size, size_t size);
 
 # endif
 
