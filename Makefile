@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 16:21:25 by aweaver          ###   ########.fr        #
+#    Updated: 2022/02/12 16:29:00 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME			=			AlCu
 
 CC				=			gcc
 
-CFLAGS			=			-MMD -Wall -Wextra -Werror
+CFLAGS			=			-MMD -Wall -Wextra -Werror -g3
 
 LIBFT_PATH		=			./libft/
 SRCS_PATH		=			./sources/
@@ -56,7 +56,7 @@ fclean:						clean
 							$(MAKE) -C $(LIBFT_PATH) fclean
 
 re:							fclean all
-							$(MAKE) -C $(LIBFT_PATH) re
+
 
 -include $(DEP)
 
