@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 12:19:15 by aweaver           #+#    #+#             */
-/*   Updated: 2021/11/26 12:25:10 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:01:35 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	ft_atoi(const char *nptr)
 	int	sign;
 	int	nb;
 
+	if (nptr == 0)
+		return (0);
 	sign = 1;
 	nb = 0;
 	while (ft_is_whitespace(*nptr) == 1)
