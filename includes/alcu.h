@@ -6,14 +6,20 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 21:37:23 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 17:44:34 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 18:44:52 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ALCU_H
 # define ALCU_H
 
-# include "libft.h"
+#include "libft.h"
+#include "unistd.h"
+#include "alcu.h"
+#include "libftprintf.h"
+#include "get_next_line.h"
+#include "stdlib.h"
+#include "fcntl.h"
 
 # ifndef S_MAP
 #  define S_MAP
@@ -38,6 +44,8 @@ int	alcu_parsing(int fd, t_map *map);
 #  define FT_DISPLAY_BOARD
 
 void	ft_display_board(t_map *map);
+void	ft_game_loop(t_map *map);
+
 
 # endif
 

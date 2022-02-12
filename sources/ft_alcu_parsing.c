@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alcu_parsing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 18:06:50 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 18:45:00 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "alcu.h"
-#include "get_next_line.h"
-#include "stdlib.h"
 
 int	alcu_parsing(int fd, t_map *map)
 {

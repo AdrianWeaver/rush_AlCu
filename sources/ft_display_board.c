@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_display_board.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:43:50 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 18:16:46 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 18:46:26 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "alcu.h"
 
 int	ft_check_max(t_map *map)
