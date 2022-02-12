@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 17:14:38 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:35:59 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	alcu_parsing(int fd, t_map *map)
 
 	i = 0;
 	map->size = 0;
-	map->heap = malloc(sizeof(*(map->heap) * 1));
+	map->heap = NULL;
 	do
 	{
 		str = get_next_line(fd);
@@ -35,8 +35,7 @@ int	alcu_parsing(int fd, t_map *map)
 		}
 		if (str != NULL && map->heap != NULL)
 		{
-			//map->heap = ft_realloc(map->heap, i, i + 1);
-			map->heap = realloc(map->heap, (sizeof(map->heap) + 1));
+			map->heap = ft_realloc(map->heap, i, i + 1);
 			if (map->heap == 0)
 				return (-1);
 			map->heap[i] = ft_atoi(str);	
@@ -44,5 +43,6 @@ int	alcu_parsing(int fd, t_map *map)
 		}
 		i++;
 	} while (str); 
+	map->heap = realloc(map->heap, (sizeof(map->heap) - 1));
 	return (0);		
 }
