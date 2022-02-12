@@ -6,7 +6,7 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 13:54:37 by bregneau         ###   ########.fr        #
+#    Updated: 2022/02/12 16:11:39 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ SRCS		=	$(addprefix $(LIBFT_PATH),\
 				ft_bzero.c			\
 				ft_memcpy.c			\
 				ft_memmove.c		\
+				ft_strcpy.c			\
+				ft_strcat.c			\
 				ft_strlcpy.c		\
 				ft_strlcat.c		\
 				ft_toupper.c		\

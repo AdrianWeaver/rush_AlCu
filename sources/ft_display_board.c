@@ -6,15 +6,17 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:43:50 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 13:36:02 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 15:44:25 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "alcu.h"
 
 int	ft_check_max(t_map *data)
 {
 	int	max;
+	int	i;
 
 	max = 0;
 	while (i < data->size)
@@ -45,9 +47,9 @@ void	ft_display_board(t_map *data)
 		j = 0;
 		while (j < data->heap[i])
 		{
-			ft_putstr('|');
+			ft_putchar('|');
 			if (j != (data->heap[i] - 1))
-				ft_putstr(' ');
+				ft_putchar(' ');
 			j++;
 		}
 		while (j < (max - data->heap[i]) / 2)

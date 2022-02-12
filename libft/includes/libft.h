@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/25 11:10:46 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 14:05:14 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 16:10:20 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,10 +131,24 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 
 # endif
 
+# ifndef FT_STRCPY
+#  define FT_STRCPY
+
+char	*ft_strcpy(char *dest, const char *str);
+
+# endif
+
 # ifndef FT_STRLCPY_H
 #  define FT_STRLCPY_H
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+
+# endif
+
+# ifndef FT_STRCAT
+#  define FT_STRCAT
+
+char	*ft_strcat(char *dest, const char *src);
 
 # endif
 

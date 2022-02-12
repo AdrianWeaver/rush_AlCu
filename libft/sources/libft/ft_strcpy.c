@@ -1,15 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 13:42:47 by aweaver          ###   ########.fr       */
+/*   Created: 2022/02/12 16:00:43 by aweaver           #+#    #+#             */
+/*   Updated: 2022/02/12 16:06:56 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
+char	*ft_strcpy(char *dest, const char *str)
+{
+	size_t	i;
 
+	i = -1;
+	while (str[++i])
+		dest[i] = str[i];
+	dest[i] = 0;
+	return (dest);
+}

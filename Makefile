@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 15:10:19 by aweaver          ###   ########.fr        #
+#    Updated: 2022/02/12 15:45:15 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,21 +23,22 @@ OBJS_PATH		=			./objs/
 INC				=			-I $(addprefix $(LIBFT_PATH),includes/)\
 							-I ./includes
 
-SRCS			=			$(addprefix $(SRCS_PATH),\
-							main.c						\
+SRCS			=			main.c\
 							ft_display_board.c			\
-							ft_parse.c)
+							ft_alcu_parsing.c
 
-OBJS			=			$($(addprefix $(OBJS_PATH),SRCS:.c=.o))
+OBJS			=			$(addprefix $(OBJS_PATH),$(SRCS:.c=.o))
 
 DEPS			=			$(OBJS:.o=.d)
 
 LIBFT			=			$(addprefix $(LIBFT_PATH),libft.a)
 
+LIBS			=			-Llibft -lft
+
 all:						$(NAME)
 
 $(NAME):					$(OBJS) $(LIBFT)
-							$(CC) $(CFLAGS) -o $(NAME) $^ $(INC)
+							$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INC) $(LIBS)
 
 $(LIBFT):
 							$(MAKE) -C $(LIBFT_PATH)
