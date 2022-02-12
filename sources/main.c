@@ -3,19 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:39:03 by aweaver           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/02/12 19:15:19 by aweaver          ###   ########.fr       */
+=======
+/*   Updated: 2022/02/12 18:44:36 by bregneau         ###   ########.fr       */
+>>>>>>> a29a2f591f99362aeaa6f72fade605851f9f82df
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include "unistd.h"
 #include "alcu.h"
+<<<<<<< HEAD
 #include "libftprintf.h"
 #include "fcntl.h"
 #include <stddef.h>
+=======
+>>>>>>> a29a2f591f99362aeaa6f72fade605851f9f82df
 
 int	main(int argc, char **argv)
 {
