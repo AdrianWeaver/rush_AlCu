@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 20:18:01 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 20:52:52 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 
 static int	ft_check_alcu_map(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (str[i] && str[i] != '\n')
 	{
 		if (ft_isdigit(str[i]) == 0)
@@ -33,6 +35,13 @@ static int	ft_check_alcu_map(char *str)
 	return (0);
 }
 
+int	ft_check_heap(t_map *map)
+{
+	if (map->heap[0] == 0)
+		return (-1);
+	return (0);
+}
+
 int	alcu_parsing(int fd, t_map *map)
 {
 	char	*str;
@@ -41,9 +50,11 @@ int	alcu_parsing(int fd, t_map *map)
 	i = 0;
 	map->size = 0;
 	map->heap = NULL;
-	do
+	while (1)
 	{
 		str = get_next_line(fd);
+		if (str == NULL)
+			break ;
 		if (ft_check_alcu_map(str) == -1)
 		{
 			free(str);
@@ -51,16 +62,14 @@ int	alcu_parsing(int fd, t_map *map)
 				free(map->heap);
 			return (-1);
 		}
-		if (str != NULL)
-		{
-			map->heap = ft_realloc(map->heap, (i * sizeof(*map->heap)), ((i + 1) * sizeof(*map->heap)));
-			if (map->heap == 0)
-				return (-1);
-			map->heap[i] = ft_atoi(str);	
-			map->size++;
-		}
+		map->heap = ft_realloc(map->heap, (i * sizeof(*map->heap)),
+				((i + 1) * sizeof(*map->heap)));
+		if (map->heap == 0)
+			return (-1);
+		map->heap[i] = ft_atoi(str);
+		map->size++;
 		free(str);
 		i++;
-	} while (str); 
-	return (0);		
+	}
+	return (ft_check_heap(map));
 }
