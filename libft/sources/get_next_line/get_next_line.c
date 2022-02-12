@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:11:32 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 15:55:24 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 16:34:32 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,26 +116,3 @@ char	*get_next_line(int fd)
 		free(buffer);
 	return (line);
 }
-
-//int	main(void)
-//{
-	//int		i;
-	//int		fd;
-	//char	*str;
-//
-	//i = 0;
-	//fd = open("tata.txt", O_RDONLY);
-	//printf("%d\n", fd);
-	//if (fd == -1)
-	//{
-		//printf("le fichier n'a pas pu etre ouvert");
-		//return (0);
-	//}
-	//do{
-		//str = get_next_line(fd);
-		//printf("%s", str);
-		//free(str);
-		//i++;
-	//} while (str);
-	//return (0);
-//}
