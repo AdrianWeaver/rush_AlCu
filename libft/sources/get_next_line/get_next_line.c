@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/02 16:11:32 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/13 00:45:28 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 00:48:08 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,10 @@ char	*ft_make_magic(int fd, char *buffer, int bytes_read)
 
 	if (fd == -1)
 	{
+		free(buffer);
 		free(memory);
 		memory = NULL;
+		return (0);
 	}
 	if (memory == 0)
 	{
