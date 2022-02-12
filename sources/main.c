@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:43:49 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 17:29:19 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:50:07 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 		ft_printf("ERROR\n");
 		return (-1);
 	}
+	ft_game_loop(&map);
 	free(map.heap);
 	return (0);
 }
