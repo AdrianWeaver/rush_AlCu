@@ -5,8 +5,7 @@
 #                                                     +:+ +:+         +:+      #
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 16:11:39 by aweaver          ###   ########.fr        #
+#    Created: 2021/11/23 10:40:46 by aweaver           #+#    #+#              # #    Updated: 2022/02/12 16:11:39 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -106,7 +105,7 @@ INC			=	-I ./includes
 
 DEP			=	$(OBJS:.o=.d)
 
-CFLAGS		=	-MMD -Wall -Wextra -Werror
+CFLAGS		=	-MMD -Wall -Wextra -Werror -g3
 
 all:		$(NAME)
 
