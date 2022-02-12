@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/12 22:32:40 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/12 23:23:02 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ int	ft_ia_turn(t_map *map)
 int	ft_check_move(t_map *map, char* str)
 {
 	int	move;
+	char *save;
 	
-	if (ft_strlen(str) != 1 || ((*str != '1') || (*str != '2')
-		|| (*str != '3')) || ft_atoi(str) > map->heap[map->size - 1])
-	{
-		ft_putstr_no_nl(str);
-		ft_putstr(" - Invalid choice\n");
-		return (-1);
-	}
+	save = str;
+	while (*str == '0')
+		str++;
 	move = ft_atoi(str);
-	free(str);
+	if (ft_strlen(str) != 2 || move < 1 || move > 3 || move > map->heap[map->size - 1])
+	{
+		ft_putstr_no_nl(save);
+		ft_putstr(" - Invalid choice\n");
+		return (0);
+	}
 	return (move);
 }
 
@@ -63,19 +65,20 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 	char	*line;
 	int		move;
 
-	ft_putendl("Please choose between 1 and 3 items");
-	line = get_next_line(fake_stdin);
 	do
 	{
+		ft_putendl("Please choose between 1 and 3 items");
+		line = get_next_line(fake_stdin);
 		move = ft_check_move(map, line);
-	} while (move != -1);
-	return (ft_atoi(line));
+		free(line);
+	} while (move == 0);
+	return (move);
 }
 
 void	ft_play(t_map *map, int move)
 {
 	map->heap[map->size - 1] -= move;
-	if (map->heap[map->size - 1] == 0)
+	if (map->heap[map->size - 1] <= 0)
 		map->size--;
 }
 
@@ -84,24 +87,26 @@ void	ft_game_loop(t_map *map, int fake_stdin)
 	int	player;
 	int	move;
 
-	(void)fake_stdin;
 	player = 0;
 	ft_init(map);
-	while (map->heap[0])
+	while (map->heap[0] > 0)
 	{
 		ft_display_board(map);
 		if (player)
 		{
-			ft_player_turn(map, fake_stdin);
+			move = ft_player_turn(map, fake_stdin);
 			player = 0;
 		}
-		else
+		else 
 		{
 			move = ft_ia_turn(map);
 			player = 1;
 		}
+		// ft_printf("%d\n", map->heap[0]);
 		ft_play(map, move);
+		// ft_printf("%d\n", map->heap[0]);
 	}
+	free(map->rest);
 	if (player)
 		ft_putendl("You are the winner! Congratulations!");
 	else
