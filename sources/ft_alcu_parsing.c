@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 17:35:59 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 17:40:37 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	alcu_parsing(int fd, t_map *map)
 			map->heap[i] = ft_atoi(str);	
 			map->size++;
 		}
+		free(str);
 		i++;
 	} while (str); 
 	map->heap = realloc(map->heap, (sizeof(map->heap) - 1));
