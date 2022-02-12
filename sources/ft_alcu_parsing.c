@@ -6,7 +6,7 @@
 /*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 20:09:44 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/12 20:18:01 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_check_alcu_map(char *str)
 	int i;
 
 	i = 0;
-	while (str[i] && str[i] != \n)
+	while (str[i] && str[i] != '\n')
 	{
 		if (ft_isdigit(str[i]) == 0)
 			return (-1);
