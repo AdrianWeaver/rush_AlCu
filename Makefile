@@ -6,7 +6,7 @@
 #    By: aweaver <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 15:45:15 by aweaver          ###   ########.fr        #
+#    Updated: 2022/02/12 16:21:25 by aweaver          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ LIBS			=			-Llibft -lft
 all:						$(NAME)
 
 $(NAME):					$(OBJS) $(LIBFT)
-							$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(INC) $(LIBS)
+							$(CC) $(OBJS) -o $(NAME) $(INC) $(LIBS)
 
 $(LIBFT):
 							$(MAKE) -C $(LIBFT_PATH)
