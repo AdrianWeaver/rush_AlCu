@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/13 17:31:41 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 19:30:20 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_check_heap(t_map *map)
 	i = 0;
 	while (i < map->size)
 	{
-		if (map->heap[i] == 0)
+		if (map->heap[i] == 0 && i < ((map->size) - 1))
 		{
 			free(map->heap);
 			get_next_line(-1);
