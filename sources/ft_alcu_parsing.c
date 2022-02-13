@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alcu_parsing.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aweaver <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 23:31:24 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/13 17:09:55 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_check_alcu_map(char *str)
 	}
 	while (*str == 0)
 		str++;
-	if (ft_strlen(str) > 5 || ft_atoi(str) > 1000)
+	if (ft_strlen(str) > 6 || ft_atoi(str) > 10000)
 		return (-1);
 	return (0);
 }
