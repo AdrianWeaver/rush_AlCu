@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/13 00:41:07 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 16:12:30 by bregneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,11 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 	{
 		ft_putendl("Please choose between 1 and 3 items");
 		line = get_next_line(fake_stdin);
-		move = ft_check_move(map, line);
-		free(line);
+		if (line)
+		{
+			move = ft_check_move(map, line);
+			free(line);
+		}
 	} while (move == 0);
 	return (move);
 }
