@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:43:50 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 18:46:26 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 19:46:13 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_display_board(t_map *map)
 
 	i = 0;
 	max = ft_check_max(map);
-	while (i < map->size)
+	while (i < map->size && map->heap[i] != 0)
 	{
 		j = 0;
 		while (j < max - map->heap[i])

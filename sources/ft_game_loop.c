@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/13 18:34:23 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/13 19:39:16 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,17 @@ int	ft_ia_turn(t_map *map)
 	return (move);
 }
 
-int	ft_check_move(t_map *map, char* str)
+int	ft_check_move(t_map *map, char *str)
 {
-	int	move;
-	char *save;
-	
+	int		move;
+	char	*save;
+
 	save = str;
 	while (*str == '0')
 		str++;
 	move = ft_atoi(str);
-	if (ft_strlen(str) != 2 || move < 1 || move > 3 || move > map->heap[map->size - 1])
+	if (ft_strlen(str) != 2 || move < 1 || move > 3
+		|| move > map->heap[map->size - 1])
 	{
 		ft_putstr_no_nl(save);
 		ft_putstr(" - Invalid choice\n");
@@ -65,9 +66,9 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 	char	*line;
 	int		move;
 
-	do
+	move = 0;
+	while (move == 0)
 	{
-		move = 0;
 		ft_putendl("Please choose between 1 and 3 items");
 		line = get_next_line(fake_stdin);
 		if (line == 0)
@@ -77,7 +78,7 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 		}
 		move = ft_check_move(map, line);
 		free(line);
-	} while (move == 0);
+	}
 	return (move);
 }
 
@@ -106,10 +107,10 @@ void	ft_game_loop(t_map *map, int fake_stdin)
 			{
 				free(get_next_line(-1));
 				free(map->rest);
-				return ;	
+				return ;
 			}
 		}
-		else 
+		else
 		{
 			move = ft_ia_turn(map);
 			player = 1;
