@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 13:42:39 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/13 19:30:20 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/13 19:57:46 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_check_alcu_map(char *str)
 
 int	ft_check_heap(t_map *map)
 {
-	int i;
+	int	i;
 
 	if (map->heap == 0)
 		return (-1);
@@ -76,7 +76,6 @@ int	alcu_parsing(int fd, t_map *map)
 		}
 		if (ft_check_alcu_map(str) == -1)
 		{
-
 			get_next_line(-1);
 			free(str);
 			if (i > 0)
