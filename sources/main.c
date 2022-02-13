@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 18:39:03 by aweaver           #+#    #+#             */
-/*   Updated: 2022/02/12 21:58:39 by aweaver          ###   ########.fr       */
+/*   Updated: 2022/02/13 18:17:56 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	main(int argc, char **argv)
 	close(0);
 	fake_stdin = open("/dev/tty", O_RDONLY);
 	ft_game_loop(&map, fake_stdin);
-	ft_display_board(&map);
 	free(map.heap);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
-/*   Updated: 2022/02/13 16:12:30 by bregneau         ###   ########.fr       */
+/*   Updated: 2022/02/13 18:21:39 by aweaver          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 	{
 		ft_putendl("Please choose between 1 and 3 items");
 		line = get_next_line(fake_stdin);
+		if (line == 0)
+		{
+			ft_putstr("So you chose not to play anymore? :)\n");
+			return (-1);
+		}
 		if (line)
 		{
 			move = ft_check_move(map, line);
@@ -99,6 +104,12 @@ void	ft_game_loop(t_map *map, int fake_stdin)
 		{
 			move = ft_player_turn(map, fake_stdin);
 			player = 0;
+			if (move == -1)
+			{
+				free(get_next_line(-1));
+				free(map->rest);
+				return ;	
+			}
 		}
 		else 
 		{
