@@ -6,13 +6,13 @@
 #    By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/12 10:58:46 by aweaver           #+#    #+#              #
-#    Updated: 2022/02/12 22:25:43 by bregneau         ###   ########.fr        #
+#    Updated: 2022/02/13 16:01:48 by bregneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=			AlCu
 
-CC				=			gcc
+CC				=			cc
 
 CFLAGS			=			-MMD -Wall -Wextra -Werror -g3
 

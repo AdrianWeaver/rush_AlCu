@@ -100,7 +100,7 @@ OBJS		=	$(addprefix $(OBJS_PATH),$(SRCS:.c=.o))
 
 OBJS_PATH	=	./objects/
 
-CC			=	gcc
+CC			=	cc
 
 INC			=	-I ./includes
 
