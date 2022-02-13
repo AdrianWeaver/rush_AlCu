@@ -6,7 +6,11 @@
 /*   By: bregneau <bregneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/12 11:52:13 by bregneau          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/02/13 18:21:39 by aweaver          ###   ########.fr       */
+=======
+/*   Updated: 2022/02/13 18:18:00 by bregneau         ###   ########.fr       */
+>>>>>>> 60513d3c5090a10fc2f72f167a334324452646dc
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +71,7 @@ int	ft_player_turn(t_map *map, int fake_stdin)
 
 	do
 	{
+		move = 0;
 		ft_putendl("Please choose between 1 and 3 items");
 		line = get_next_line(fake_stdin);
 		if (line == 0)
